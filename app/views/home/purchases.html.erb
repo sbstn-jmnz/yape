@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>My Purchases</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Description</th>
+      <th>Sold</th>
+      <th>Seller</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @my_purchases.each do |purchase| %>
+      <tr>
+        <td><%= purchase.product.name %></td>
+        <td><%= purchase.product.price %></td>
+        <td><%= purchase.product.description %></td>
+        <td><%= purchase.product.sold %></td>
+        <td><%= purchase.product.user.email %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Product', new_product_path %>
