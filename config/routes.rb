@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
+  get 'users/index'
+
+  get 'users/show'
+
   post 'purchases/create'
   resources :products
   devise_for :users
+  resources :users, only: [:index, :show]
   get 'home/index'
   get 'home/purchases'
   get 'home/sales'

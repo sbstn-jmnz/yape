@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Products</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Ventas</th>
+      <th>Compras</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.email %></td>
+        <td><%= user.products.where(sold: true).count %></td>
+        <td><%= user.purchases.count %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
