@@ -13,6 +13,11 @@ class ProductsController < ApplicationController
   def show
   end
 
+  def search
+    # buscar por query params, buscar por LIKE
+    # @products = Product.where(MAGIC)
+  end
+
   # GET /products/new
   def new
     @product = Product.new

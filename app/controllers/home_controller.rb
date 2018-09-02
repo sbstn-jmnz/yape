@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
-  before_action only: [:purchases]
+  before_action except: [:index]
+
   def index
   end
 
