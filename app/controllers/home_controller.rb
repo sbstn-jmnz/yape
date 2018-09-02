@@ -6,4 +6,8 @@ class HomeController < ApplicationController
   def purchases
     @my_purchases = Purchase.where(user_id: current_user.id)
   end
+
+  def sales
+    @my_sales = Product.where(sold: true)
+  end
 end
